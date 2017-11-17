@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Hangman</title>
-        <link  href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         
@@ -11,15 +11,7 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <script>
-            var selectedword = "";
-            var selectedhint = "";
-            var board = "";
-            var remainingGuesses = 6;
-            var words = ["snake", "monkey", "beetle"];
-            
-            console.log(words[0]);
-        </script>
+        
     </head>
     <body>
         <div class = 'container text-center'>
@@ -34,6 +26,8 @@
             </div >
             
             <div id = "letters">
+                <input type="text" id= "letterBox">
+                <button id="letterBtn">Submit</button>
                 
             </div>
             
@@ -41,6 +35,16 @@
                 <img src = "img/stick_0.png" id = "hangImg">
             </div>
             
+            <div id ="won">
+                <h2>You Won!</h2>
+                <button class ="replayBtn btn btn-success">Play Again</button>
+            </div>
+            <div id ="lost">
+                <h2>You Lost!</h2>
+                <button class ="replayBtn btn btn-success">Play Again</button>
+            </div>
+            
         </div>
+        <script src = "js/hangman.js"></script>
     </body>
 </html>
