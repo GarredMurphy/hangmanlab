@@ -2,9 +2,9 @@ var selectedWord = "";
 var selectedHint = "";
 var board = "";
 var remainingGuesses = 6;
-var words = [{ word: "snake", hint: "It's a reptile"}
-             { word: "monkey", hint: "It's a reptile"}
-             { word: "beetle"];
+var words = [{ word: "snake", hint: "It's a reptile"},
+             { word: "monkey", hint: "It's a mammal"},
+             { word: "beetle", hint: "It's an insect"}];
 
 window.onload = startGame();
 
@@ -20,6 +20,7 @@ function startGame(){
 function pickWord() {
     var randomInt = Math.floor(Math.random() * words.length);
     selectedWord = words[randomInt].toUppercase();
+    selectedHint = words[randomInt].hint;
 }
 
 function initBoard()
@@ -37,6 +38,9 @@ function updateBoard(){
     {
         document.getElementById("word").innerHTML += letter + " ";
     }
+    
+    $("word").append("<br />");
+    $("word").append("<br />");
 }
 
 function updateWord(positions, letter) {
