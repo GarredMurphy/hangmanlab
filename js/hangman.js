@@ -1,13 +1,13 @@
-            var selectedWord = "";
-            var selectedHint = "";
-            var board = "";
-            var remainingGuesses = 6;
-            var words = [{ word: "snake", hint: "It's a reptile"}, { word: "monkey", hint: "It's a mammal"}, { word: "beetle", hint: "It's an insect"}];
+var selectedWord = "";
+var selectedHint = "";
+var board = "";
+var remainingGuesses = 6;
+var words = [{ word: "snake", hint: "It's a reptile"}, { word: "monkey", hint: "It's a mammal"}, { word: "beetle", hint: "It's an insect"}];
             //var words = ["snake","monkey","beetle"];
 
             
 
-            window.onload = startGame;
+window.onload = startGame;
             
             
             
@@ -15,7 +15,7 @@
             
             
             
-            function startGame(){
+function startGame(){
     pickWord();
     initBoard();
     updateBoard();
@@ -25,41 +25,39 @@
         location.reload();
     });
 }
-            function pickWord() {
-                var randomInt = Math.floor(Math.random() * words.length);
-                selectedWord = words[randomInt].word.toUpperCase();
-                selectedHint = words[randomInt].hint;
+function pickWord() {
+    var randomInt = Math.floor(Math.random() * words.length);
+    selectedWord = words[randomInt].word.toUpperCase();
+    selectedHint = words[randomInt].hint;
 
                 
-                console.log (selectedWord);
-            }
+    console.log (selectedWord);
+}
             
-            function updateBoard()
-            {
-                $("#word").empty();
-                for (var letter of board)
-            {
+function updateBoard()
+{
+    $("#word").empty();
+    for (var letter of board)
+    {
 
-                //document.getElementById("word").innerHTML += letter + " ";
-                $("#word").append(letter + " ")
-            }
+//document.getElementById("word").innerHTML += letter + " ";
+    $("#word").append(letter + " ")
+}
             
-            $("#hintBtn").on("click", function() {
-                $("#hint").empty();
-                $("#hint").append("<br />");
-                $("#hint").append("<span class ='hint'>Hint: " + selectedHint + "</span>");  
-            });
+    $("#hintBtn").on("click", function() {
+        $("#hint").empty();
+        $("#hint").append("<br />");
+        $("#hint").append("<span class ='hint'>Hint: " + selectedHint + "</span>");  
+    });
+}
             
-            
-            }
-            
-            function initBoard()
-            {
-                for (var letter in selectedWord)
-                {
-                    board += '_';
-                }
-            }
+function initBoard()
+{
+    for (var letter in selectedWord)
+    {
+        board += '_';
+    }
+}
             
     function createLetters() {
         
@@ -131,6 +129,7 @@ function endGame(win) {
     else
     {
         $('#lost').show();
+        $("#hint").empty();
     }
 }
 
